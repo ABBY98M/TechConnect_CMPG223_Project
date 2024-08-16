@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registrationPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.registrationPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registrationPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.registrationPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -104,76 +104,55 @@
                 <input type="radio" name="educationLevel" value="highSchool" checked> High School
             </label>
             <label>
-                <input type="radio" name="educationLevel" value="academic"> Academic Report
+                <input type="radio" name="educationLevel" value="college"> College/University
             </label>
         </div>
         
-        <div id="subjectsContainer" style="display: none;">
-            <div class="subject-group">
-                <label for="subject1">Subject 1</label>
-                <input type="text" id="subject1" placeholder="Enter subject name" required>
-                <label for="mark1">Mark</label>
-                <input type="number" id="mark1" placeholder="Enter subject mark" min="0" max="100" required>
-            </div>
+        <div id="academicReportContainer">
+            <label for="academicReport">Upload Academic Document</label>
+            <input type="file" id="academicReport" required>
         </div>
-        
-        <button type="button" id="addSubjectButton" style="display: none;">Add Subject</button>
-        
-        <div id="academicReportContainer" style="display: none;">
-            <label for="academicReport">Upload Academic Report</label>
-            <input type="file" id="academicReport"
+
+        <div class="form-group" id="apsContainer">
+            <label for="apsScore">Enter APS Score</label>
+            <input type="text" id="apsScore" placeholder="Enter your overall APS score" required>
         </div>
-        
-        <label>
-            <br />
-            <asp:Button ID="btnRegistor" runat="server" OnClick="btnRegistor_Click" Text="Register" />
-        </label>
-        
+
+        <div class="form-group" id="gpaContainer" style="display: none;">
+            <label for="gpa">Enter GPA Average</label>
+            <input type="text" id="gpa" placeholder="Enter your GPA average">
+        </div>
+
+        <button type="submit">Register</button>
     </form>
 </div>
 
 <script>
-	const subjectsContainer = document.getElementById('subjectsContainer');
-	const academicReportContainer = document.getElementById('academicReportContainer');
-	const addSubjectButton = document.getElementById('addSubjectButton');
-	let subjectCount = 1;
+    const apsContainer = document.getElementById('apsContainer');
+    const gpaContainer = document.getElementById('gpaContainer');
 
-	document.querySelectorAll('input[name="educationLevel"]').forEach(radio => {
-		radio.addEventListener('change', function () {
-			if (this.value === 'highSchool') {
-				subjectsContainer.style.display = 'block';
-				academicReportContainer.style.display = 'none';
-				addSubjectButton.style.display = 'block';
-			} else {
-				subjectsContainer.style.display = 'none';
-				academicReportContainer.style.display = 'block';
-				addSubjectButton.style.display = 'none';
-			}
-		});
-	});
+    document.querySelectorAll('input[name="educationLevel"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.value === 'highSchool') {
+                apsContainer.style.display = 'block';
+                gpaContainer.style.display = 'none';
+            } else {
+                apsContainer.style.display = 'none';
+                gpaContainer.style.display = 'block';
+            }
+        });
+    });
 
-	addSubjectButton.addEventListener('click', function () {
-		subjectCount++;
+    // Default to show high school fields
+    document.querySelector('input[name="educationLevel"]:checked').dispatchEvent(new Event('change'));
 
-		const subjectGroup = document.createElement('div');
-		subjectGroup.className = 'subject-group';
-		subjectGroup.innerHTML = `
-            <label for="subject${subjectCount}">Subject ${subjectCount}</label>
-            <input type="text" id="subject${subjectCount}" placeholder="Enter subject name" required>
-            <label for="mark${subjectCount}">Mark</label>
-            <input type="number" id="mark${subjectCount}" placeholder="Enter subject mark" min="0" max="100" required>
-        `;
-
-		subjectsContainer.appendChild(subjectGroup);
-	});
-
-	document.getElementById('registerForm').addEventListener('submit', function (event) {
-		event.preventDefault();
-		// Handle form submission logic here
-		alert('Registration successful!');
-		// Redirect to the login page
-		window.location.href = 'loginPage.aspx';
-	});
+    document.getElementById('registerForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Handle form submission logic here
+        alert('Registration successful!');
+        // Redirect to the login page
+        window.location.href = 'loginPage.aspx';
+    });
 </script>
 
 </body>

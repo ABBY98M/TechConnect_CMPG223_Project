@@ -36,8 +36,8 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
-        input[type="text"], textarea {
-            width: 100%;
+        input[type="text"], input[type="number"], textarea {
+            width: 90%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -52,12 +52,6 @@
         }
         button:hover {
             background-color: #0056b3;
-        }
-        .subject-group {
-            margin-bottom: 10px;
-        }
-        .subject-container {
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -93,32 +87,23 @@
                 <input type="radio" name="educationLevel" value="highSchool" checked> High School
             </label>
             <label>
-                <input type="radio" name="educationLevel" value="academic"> Academic Report
+                <input type="radio" name="educationLevel" value="college"> College/University
             </label>
         </div>
         
-        <div id="subjectsContainer" style="display: none;">
-            <div class="subject-group">
-                <label for="subject1">Subject 1</label>
-                <input type="text" id="subject1" placeholder="Enter subject name" required>
-                <label for="mark1">Mark</label>
-                <input type="number" id="mark1" placeholder="Enter subject mark" min="0" max="100" required>
-            </div>
-        </div>
-        
-        <button type="button" id="addSubjectButton" style="display: none;">Add Subject</button>
-        
-        <div id="academicReportContainer" style="display: none;">
-            <label for="academicReport">Upload Academic Report</label>
-            <input type="file" id="academicReport">
-        </div>
-
-        <br />
-		<br />
-
         <div class="form-group">
-            <label for="apsScore">Overall APS Score</label>
+            <label for="academicReport">Upload Academic Document</label>
+            <input type="file" id="academicReport" required>
+        </div>
+
+        <div class="form-group" id="apsContainer">
+            <label for="apsScore">Enter APS Score</label>
             <input type="text" id="apsScore" placeholder="Enter your overall APS score" required>
+        </div>
+
+        <div class="form-group" id="gpaContainer" style="display: none;">
+            <label for="gpa">Enter GPA Average</label>
+            <input type="text" id="gpa" placeholder="Enter your GPA average">
         </div>
 
         <button type="submit">Update Profile</button>
@@ -126,30 +111,31 @@
 </div>
 
 <script>
-	let subjectCount = 0;
+    // Show or hide fields based on selected education level
+    const educationLevelRadios = document.querySelectorAll('input[name="educationLevel"]');
+    const apsContainer = document.getElementById('apsContainer');
+    const gpaContainer = document.getElementById('gpaContainer');
 
-	document.getElementById('addSubjectButton').addEventListener('click', function () {
-		subjectCount++;
+    educationLevelRadios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.value === 'highSchool') {
+                apsContainer.style.display = 'block';
+                gpaContainer.style.display = 'none';
+            } else if (this.value === 'college') {
+                apsContainer.style.display = 'none';
+                gpaContainer.style.display = 'block';
+            }
+        });
+    });
 
-		const subjectContainer = document.getElementById('subjectContainer');
+    // Default to show high school fields
+    document.querySelector('input[name="educationLevel"]:checked').dispatchEvent(new Event('change'));
 
-		const subjectGroup = document.createElement('div');
-		subjectGroup.className = 'subject-group';
-		subjectGroup.innerHTML = `
-            <label for="subject${subjectCount}">Subject ${subjectCount}</label>
-            <input type="text" id="subject${subjectCount}" placeholder="Enter subject name" required>
-            <label for="score${subjectCount}">Score</label>
-            <input type="text" id="score${subjectCount}" placeholder="Enter score" required>
-        `;
-
-		subjectContainer.appendChild(subjectGroup);
-	});
-
-	document.getElementById('updateProfileForm').addEventListener('submit', function (event) {
-		event.preventDefault();
-		// Handle form submission logic here
-		alert('Profile updated successfully!');
-	});
+    document.getElementById('updateProfileForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // Handle form submission logic here
+        alert('Profile updated successfully!');
+    });
 </script>
 
 </body>
