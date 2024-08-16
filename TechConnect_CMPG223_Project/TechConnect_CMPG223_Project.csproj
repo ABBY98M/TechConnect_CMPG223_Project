@@ -74,9 +74,15 @@
     <Content Include="App_Data\Student_log.ldf">
       <DependentUpon>Student.mdf</DependentUpon>
     </Content>
+    <Content Include="checkStatus.aspx" />
+    <Content Include="defaultPage.aspx" />
     <Content Include="Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" />
+    <Content Include="forgotPassword.aspx" />
+    <Content Include="loginPage.aspx.aspx" />
     <Content Include="Moire - Baikal _ Sample.jpg" />
-    <Content Include="Student_RegistrationForm.aspx" />
+    <Content Include="signupPage.aspx" />
+    <Content Include="registrationPage.aspx" />
+    <Content Include="updateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,13 +100,55 @@
     <Compile Include="adminLogin.aspx.designer.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student_RegistrationForm.aspx.cs">
-      <DependentUpon>Student_RegistrationForm.aspx</DependentUpon>
+    <Compile Include="checkStatus.aspx.cs">
+      <DependentUpon>checkStatus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Student_RegistrationForm.aspx.designer.cs">
-      <DependentUpon>Student_RegistrationForm.aspx</DependentUpon>
+    <Compile Include="checkStatus.aspx.designer.cs">
+      <DependentUpon>checkStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="defaultPage.aspx.cs">
+      <DependentUpon>defaultPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="defaultPage.aspx.designer.cs">
+      <DependentUpon>defaultPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginPage.aspx.aspx.cs">
+      <DependentUpon>loginPage.aspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginPage.aspx.aspx.designer.cs">
+      <DependentUpon>loginPage.aspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="signupPage.aspx.cs">
+      <DependentUpon>signupPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signupPage.aspx.designer.cs">
+      <DependentUpon>signupPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrationPage.aspx.cs">
+      <DependentUpon>registrationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrationPage.aspx.designer.cs">
+      <DependentUpon>registrationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="updateProfile.aspx.cs">
+      <DependentUpon>updateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="updateProfile.aspx.designer.cs">
+      <DependentUpon>updateProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

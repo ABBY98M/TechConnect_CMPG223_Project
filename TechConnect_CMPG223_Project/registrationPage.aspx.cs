@@ -17,13 +17,15 @@ namespace TechConnect_CMPG223_Project
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnRegistor_Click(object sender, EventArgs e)
         {
             string ins = "Insert into [Student](First_Name,Last_Name,Date_Of_Birth,Email,Phone_Number,Address,ID_Number,Username,Password) values('" + Name_txtbx.Text + "', '" + surname_txtbx.Text + "','" + DOB_Txtbx.Text + "','" + Email_txtbx.Text + "','" + pNumber_txtbx.Text + "','" + Address_Txtbx.Text + "','" + ID_Txtbx.Text + "','" + Username_Txbx.Text + "','" + Password_txtbx.Text + "')";
             SqlCommand com = new SqlCommand(ins, con);
             con.Open();
             com.ExecuteNonQuery();
             con.Close();
+
+            Response.Redirect("loginPage.aspx");
         }
     }
 }
