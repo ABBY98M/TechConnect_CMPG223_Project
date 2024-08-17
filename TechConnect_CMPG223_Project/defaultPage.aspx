@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="defaultPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.defaultPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="defaultPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.defaultPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,8 @@
         }
         .auto-style1 {
             width: 37px;
-			height: 98px;
-		}
+            height: 98px;
+        }
         .cta-button {
             background-color: #007BFF; /* Button color */
             color: white; /* Button text color */
@@ -34,9 +34,9 @@
         section {
             padding: 20px; /* Add padding to sections */
         }
-    	.auto-style2 {
-			height: 98px;
-		}
+        .auto-style2 {
+            height: 98px;
+        }
     </style>
 </head>
 <body>
@@ -88,17 +88,17 @@
             <h2>Unlock Your Educational Future</h2>
             <p>At Tech-Connect, we are dedicated to making higher education accessible for all South African students.</p>
             <p>Our comprehensive bursary platform connects you with a wide range of financial support options tailored to your needs,</p>
-			<p>ensuring that you can focus on your studies without the burden of financial stress.</p>
+            <p>ensuring that you can focus on your studies without the burden of financial stress.</p>
             <p>&nbsp;</p>
-			<p>Discover bursary opportunities that help you achieve your educational dreams.</p>
+            <p>Discover bursary opportunities that help you achieve your educational dreams.</p>
             Get Started &gt;&nbsp;
-			<asp:Button ID="btnApply" runat="server" BackColor="#999999" BorderStyle="None" Height="28px" OnClick="Button1_Click" Text="Apply now" />
+            <button type="button" style="background-color: #999999; border: none; height: 28px; color: white; cursor: pointer;" onclick="redirectToSignup()">Apply now</button>
         </section>
 
         <section id="about">
             <h2>About Tech-Connect</h2>
             <p>Tech-Connect is dedicated to providing bursary opportunities platform for students pursuing their Higher Education in all </p>
-			<p>South African public/private institutions.</p>
+            <p>South African public/private institutions.</p>
             <p>We partner with various institutions to offer transparent and accessible bursary options.</p>
         </section>
 
@@ -128,5 +128,11 @@
             <p>&copy; 2024 Tech-Connect. All rights reserved.</p>
         </footer>
     </form>
+
+    <script>
+        function redirectToSignup() {
+            window.location.href = 'signupPage.aspx'; // Ensure the correct file name
+        }
+    </script>
 </body>
 </html>

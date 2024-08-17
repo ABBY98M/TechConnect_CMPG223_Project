@@ -78,7 +78,7 @@
     <Content Include="defaultPage.aspx" />
     <Content Include="Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" />
     <Content Include="forgotPassword.aspx" />
-    <Content Include="loginPage.aspx.aspx" />
+    <Content Include="loginPage.aspx" />
     <Content Include="Moire - Baikal _ Sample.jpg" />
     <Content Include="signupPage.aspx" />
     <Content Include="registrationPage.aspx" />
@@ -122,12 +122,12 @@
     <Compile Include="forgotPassword.aspx.designer.cs">
       <DependentUpon>forgotPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="loginPage.aspx.aspx.cs">
-      <DependentUpon>loginPage.aspx.aspx</DependentUpon>
+    <Compile Include="loginPage.aspx.cs">
+      <DependentUpon>loginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="loginPage.aspx.aspx.designer.cs">
-      <DependentUpon>loginPage.aspx.aspx</DependentUpon>
+    <Compile Include="loginPage.aspx.designer.cs">
+      <DependentUpon>loginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signupPage.aspx.cs">
