@@ -81,7 +81,7 @@
         
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
+            <asp:TextBox ID="txtEmail" runat="server" required ReadOnly="true"></asp:TextBox>
         </div>
         
         <div class="form-group">
