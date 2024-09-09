@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class adminLogin : System.Web.UI.Page
+    public partial class adminLogin : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

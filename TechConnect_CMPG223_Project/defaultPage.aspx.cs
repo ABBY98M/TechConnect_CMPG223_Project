@@ -8,7 +8,7 @@ using System.Net.Mail; // Add this for sending emails
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class defaultPage : System.Web.UI.Page
+    public partial class defaultPage : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

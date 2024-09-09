@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class signupPage : System.Web.UI.Page
+    public partial class signupPage : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

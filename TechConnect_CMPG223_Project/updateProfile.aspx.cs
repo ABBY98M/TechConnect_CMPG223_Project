@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class updateProfile : System.Web.UI.Page
+    public partial class updateProfile : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

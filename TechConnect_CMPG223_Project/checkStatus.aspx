@@ -52,21 +52,5 @@
         <select id="resultList" class="bursary-list" size="10"></select>
     </div>
 </div>
-
-<script>
-	// Generate HTML for the bursary status results
-	let resultHTML = '';
-	bursaryApplications.forEach(application => {
-		resultHTML += `
-            <option>
-                Bursary: ${application.bursary}, Selected Option: ${application.option}, Status: ${application.status}
-            </option>
-        `;
-	});
-
-	// Display the result in the list box
-	document.getElementById('resultList').innerHTML = resultHTML;
-</script>
-
 </body>
 </html>

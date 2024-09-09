@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Web.UI;
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class forgotPassword : System.Web.UI.Page
+    public partial class forgotPassword : Page
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|//Student.mdf;Integrated Security=True";
 

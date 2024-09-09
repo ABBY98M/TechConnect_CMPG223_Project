@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class loginPage_aspx : System.Web.UI.Page
+    public partial class loginPage_aspx : Page
     {
         // Connection string to the database
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|//Student.mdf;Integrated Security=True";
