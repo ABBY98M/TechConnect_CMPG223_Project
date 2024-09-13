@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2023_4 dentsu SA Bursary Scheme for Young South Africans » Youth Opportunities Hub.jpg" />
+    <Content Include="2023_dentsu_Bursary_Scheme_Youth_Opportunities_Hub.jpg" />
     <Content Include="adminDashboard.aspx" />
     <Content Include="adminLogin.aspx" />
     <Content Include="App_Data\Student.mdf" />
