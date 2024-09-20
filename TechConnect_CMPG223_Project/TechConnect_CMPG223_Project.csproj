@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,10 +79,6 @@
     <Content Include="2023_dentsu_Bursary_Scheme_Youth_Opportunities_Hub.jpg" />
     <Content Include="adminDashboard.aspx" />
     <Content Include="adminLogin.aspx" />
-    <Content Include="App_Data\Student.mdf" />
-    <Content Include="App_Data\Student_log.ldf">
-      <DependentUpon>Student.mdf</DependentUpon>
-    </Content>
     <Content Include="checkStatus.aspx" />
     <Content Include="defaultPage.aspx" />
     <Content Include="Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" />
@@ -83,7 +87,6 @@
     <Content Include="Moire - Baikal _ Sample.jpg" />
     <Content Include="signupPage.aspx" />
     <Content Include="registrationPage.aspx" />
-    <Content Include="Student.mdf" />
     <Content Include="updateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -162,6 +165,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
