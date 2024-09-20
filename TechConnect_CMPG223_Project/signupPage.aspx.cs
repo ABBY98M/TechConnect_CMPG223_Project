@@ -77,7 +77,7 @@ namespace TechConnect_CMPG223_Project
                         if (rowsAffected > 0)
                         {
                             // Navigate to the registration page if successful
-                            Response.Redirect("registrationPage.aspx");
+                            Response.Redirect("loginPage.aspx");
                         }
                         else
                         {

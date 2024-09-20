@@ -1,64 +1,79 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient; // Needed for SQL database connection
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
+using System.Configuration; // To access the connection string
 
 namespace TechConnect_CMPG223_Project
 {
-    public partial class loginPage_aspx : Page
+    public partial class loginPage : Page
     {
-        // Connection string to the database
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|//Student.mdf;Integrated Security=True";
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Any necessary code for page load
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            string email = Request.Form["email"];
-            string password = Request.Form["password"];
-
-            if (ValidateUser(email, password))
+            // Logic to handle when the page first loads can go here.
+            if (!IsPostBack)
             {
-                // Redirect to the student dashboard if validation is successful
-                Response.Redirect("studentDashboard.aspx");
-            }
-            else
-            {
-                // Display an error message if validation fails
-                Response.Write("<script>alert('Invalid email or password. Please try again.');</script>");
+                // Any initial setup code can go here
             }
         }
 
-        private bool ValidateUser(string email, string password)
+        // Event handler for the Login button click
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            bool isValid = false;
+            // Get the entered data from the form fields
+            string email = txtEmail.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            //connection to the database
-            using (SqlConnection con = new SqlConnection(connectionString))
+            // Basic validation: Check if both fields are filled
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                //query to check for user credentials
-                string query = "SELECT COUNT(*) FROM Users WHERE Email = @Email AND Password = @Password";
+                // Display an error if any field is empty
+                Response.Write("<script>alert('Please fill out both fields.');</script>");
+                return;
+            }
 
-                //SqlCommand object to execute the query
-                using (SqlCommand cmd = new SqlCommand(query, con))
+            // Query to check if the user exists
+            try
+            {
+                // Get the connection string from Web.config
+                string connectionString = ConfigurationManager.ConnectionStrings["BursaryDBConnectionString"].ConnectionString;
+
+                // Define the SQL query to check for user credentials
+                string query = "SELECT COUNT(*) FROM Student WHERE Email = @Email AND Password = @Password";
+
+                // Use SQL connection and command to execute the query
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Password", password);
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        // Add parameters to the SQL query to prevent SQL injection
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Password", password);
 
-                    // Open the connection
-                    con.Open();
+                        // Open the connection
+                        con.Open();
 
-                    int count = (int)cmd.ExecuteScalar();
-                    isValid = count > 0;
+                        // Execute the query to check for user
+                        int userCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        // Check if a user was found
+                        if (userCount > 0)
+                        {
+                            // User exists, redirect to the application page
+                            Response.Redirect("ApplicationPage.aspx");
+                        }
+                        else
+                        {
+                            // Display an error message if login failed
+                            Response.Write("<script>alert('Invalid email or password.');</script>");
+                        }
+                    }
                 }
             }
-            return isValid;
+            catch (Exception ex)
+            {
+                // Handle any errors that occur during the process
+                Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+            }
         }
     }
 }

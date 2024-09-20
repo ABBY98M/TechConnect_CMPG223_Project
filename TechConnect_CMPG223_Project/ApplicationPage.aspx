@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registrationPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.registrationPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApplicationPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.registrationPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
