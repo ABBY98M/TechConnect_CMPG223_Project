@@ -54,106 +54,192 @@
         button:hover {
             background-color: #0056b3;
         }
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .terms-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container" style="background-image: url('Moire - Baikal _ Sample.jpg')">
-    <h1>Tech-Connect Application</h1>
+    <h1>Tech-Connect Bursary Application</h1>
     
     <form id="registerForm" runat="server">
-        <h2>Personal Details</h2>
+        <h2>1. Personal Details</h2>
         
         <div class="form-group">
+        <div class="form-group">
             <label for="fullNames">Full Names</label>
-            <input type="text" id="fullNames" placeholder="Enter your full names" required>
+            <asp:Label ID="fullNames" runat="server" Text="Logged-in Full Names"></asp:Label>
         </div>
         
         <div class="form-group">
             <label for="surname">Surname</label>
-            <input type="text" id="surname" placeholder="Enter your surname" required>
+            <asp:Label ID="surname" runat="server" Text="Logged-in Surname"></asp:Label>
         </div>
 
         <div class="form-group">
-            <label for="idnumber">ID number</label>
-            <input type="text" id="idnumber" placeholder="Enter your ID number" required>
+            <label for="idnumber">ID Number</label>
+            <asp:Label ID="idnumber" runat="server" Text="Logged-in ID"></asp:Label>
         </div>
         
         <div class="form-group">
             <label for="email">Email</label>
-            <asp:TextBox ID="txtEmail" runat="server" required ReadOnly="true"></asp:TextBox>
+            <asp:Label ID="txtEmail" runat="server" Text="Logged-in Email"></asp:Label>
         </div>
         
         <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+            <asp:Label ID="txtPhone" runat="server" Text="Logged-in Phone"></asp:Label>
         </div>
         
         <div class="form-group">
-            <label for="address">Address</label>
-            <textarea id="address" rows="3" placeholder="Enter your address" required></textarea>
+            <label for="gender">Gender</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male" required checked="true"> Male</label>
+                <label><input type="radio" name="gender" value="Female" required> Female<div class="form-group">
         </div>
-        
+
         <div class="form-group">
-            <label for="institution">High School/Institution Name</label>
-            <input type="text" id="institution" placeholder="Enter your high school or institution name" required>
+            <label for="nationality">Nationality</label>
+            <select id="nationality" required name="D1">
+                <option value="" disabled selected>Select your nationality</option>
+                <option value="South African">South African</option>
+                <option value="Other">Other</option>
+            </select>
         </div>
-        
+
         <div class="form-group">
-            <label>
-                <input type="radio" name="educationLevel" value="highSchool" checked> High School
-            </label>
-            <label>
-                <input type="radio" name="educationLevel" value="college"> College/University
-            </label>
-        </div>
-        
-        <div id="academicReportContainer">
-            <label for="academicReport">Upload Academic Document</label>
-            <input type="file" id="academicReport" required>
+            <label for="homeLanguage">Home Language</label>
+            <select id="homeLanguage" required name="D2">
+                <option value="" disabled selected>Select your home language</option>
+                <option value="English">English</option>
+                <option value="Afrikaans">Afrikaans</option>
+                <option value="Zulu">Zulu</option>
+                <!-- Add more languages as necessary -->
+            </select>
         </div>
 
-        <div class="form-group" id="apsContainer">
-            <label for="apsScore">Enter APS Score</label>
-            <input type="text" id="apsScore" placeholder="Enter your overall APS score" required>
+        <div class="form-group">
+            <label for="residentialAddress">Residential Address</label>
+            <textarea id="residentialAddress" rows="3" placeholder="Enter your residential address" required cols="20" name="S1"></textarea>
         </div>
 
-        <div class="form-group" id="gpaContainer" style="display: none;">
-            <label for="gpa">Enter GPA Average</label>
-            <input type="text" id="gpa" placeholder="Enter your GPA average">
+        <div class="form-group">
+            <label for="postalAddress">Postal Address</label>
+            <textarea id="postalAddress" rows="3" placeholder="Enter your postal address" required cols="20" name="S2"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <h2>2. Academic Information</h2>
+
+        <div class="form-group">
+            <label for="highestQualification">Highest Qualification</label>
+            <select id="highestQualification" required name="D3">
+                <option value="" disabled selected>Select your highest qualification</option>
+                <option value="High School">High School</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <!-- Add more qualification options -->
+            </select>
         </div>
 
-        <button type="submit">Register</button>
-    </form>
+        <div class="form-group">
+            <label for="currentInstitution">Current Institution</label>
+            <input type="text" id="currentInstitution" placeholder="Enter your current institution" required>
+        </div>
+
+        <div class="form-group">
+            <label for="yearOfStudy">Year of Study</label>
+            <input type="number" id="yearOfStudy" placeholder="Enter your year of study" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fieldOfStudy">Field of Study</label>
+            <input type="text" id="fieldOfStudy" placeholder="Enter your field of study" required>
+        </div>
+
+        <div class="form-group">
+            <label for="apsScore">APS Score</label>
+            <input type="number" id="apsScore" placeholder="Enter your APS score" required>
+        </div>
+
+        <h2>3. Financial Information</h2>
+
+        <div class="form-group">
+            <label for="householdIncome">Household Income</label>
+            <select id="householdIncome" required name="D4">
+                <option value="" disabled selected>Select your household income range</option>
+                <option value="Below R150,000">Below R150,000</option>
+                <option value="R150,000 - R300,000">R150,000 - R300,000</option>
+                <option value="Above R300,000">Above R300,000</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dependents">Number of Dependents</label>
+            <input type="number" id="dependents" min="0" placeholder="Enter number of dependents" required>
+        </div>
+
+        <div class="form-group">
+            <label>Receiving other bursary/scholarship?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="receivingBursary" value="yes" required checked="true"> Yes</label>
+                <label><input type="radio" name="receivingBursary" value="no" required> No</label>
+            </div>
+        </div>
+
+        <div class="form-group" id="bursaryDetails" style="display: none;">
+            <label for="otherBursary">Which bursary?</label>
+            <input type="text" id="otherBursary" placeholder="Enter the bursary/scholarship name">
+        </div>
+
+        <div class="form-group">
+            <label for="motivationLetter">Motivation Letter</label>
+            <textarea id="motivationLetter" rows="4" placeholder="Enter your motivation letter" required cols="20" name="S3"></textarea>
+        </div>
+
+        <h2>4. Documents Upload</h2>
+
+        <div class="form-group">
+            <label for="idDocument">Upload ID Document</label>
+            <input type="file" id="idDocument" required>
+        </div>
+
+        <div class="form-group">
+            <label for="proofResidence">Upload Proof of Residence</label>
+            <input type="file" id="proofResidence" required>
+        </div>
+
+                <div class="form-group">
+            <label for="certifiedResults">Upload Certified Academic Results</label>
+            <input type="file" id="certifiedResults" required>
+        </div>
+
+        <h2>5. Terms and Conditions</h2>
+<div class="terms-group">
+    <label>
+        <input type="checkbox" name="terms" required> 
+        I agree to the <a href="termsAndConditions.html" target="_blank">Terms and Conditions</a>
+    </label>
 </div>
 
-<script>
-    const apsContainer = document.getElementById('apsContainer');
-    const gpaContainer = document.getElementById('gpaContainer');
+<div class="form-group">
+    <button type="submit">Submit Application</button>
+</div>
+        </div>
 
-    document.querySelectorAll('input[name="educationLevel"]').forEach(radio => {
-        radio.addEventListener('change', function () {
-            if (this.value === 'highSchool') {
-                apsContainer.style.display = 'block';
-                gpaContainer.style.display = 'none';
-            } else {
-                apsContainer.style.display = 'none';
-                gpaContainer.style.display = 'block';
-            }
-        });
-    });
+                </label>
+            </div>
+        </div>
 
-    // Default to show high school fields
-    document.querySelector('input[name="educationLevel"]:checked').dispatchEvent(new Event('change'));
-
-    document.getElementById('registerForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        // Handle form submission logic here
-        alert('Registration successful!');
-        // Redirect to the login page
-        window.location.href = 'loginPage.aspx';
-    });
-</script>
+        </div>
+        
+    </form>
+</div>
 
 </body>
 </html>

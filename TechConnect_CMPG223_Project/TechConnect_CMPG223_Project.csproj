@@ -137,9 +137,9 @@
     <Content Include="loginPage.aspx" />
     <Content Include="Moire - Baikal _ Sample.jpg" />
     <Content Include="signupPage.aspx" />
-    <Content Include="ApplicationPage.aspx" />
+    <Content Include="ProfilePage.aspx" />
     <Content Include="StudentAccount.aspx" />
-    <Content Include="updateProfile.aspx" />
+    <Content Include="ApplicationPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -193,12 +193,12 @@
     <Compile Include="signupPage.aspx.designer.cs">
       <DependentUpon>signupPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationPage.aspx.cs">
-      <DependentUpon>ApplicationPage.aspx</DependentUpon>
+    <Compile Include="ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ApplicationPage.aspx.designer.cs">
-      <DependentUpon>ApplicationPage.aspx</DependentUpon>
+    <Compile Include="ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentAccount.aspx.cs">
       <DependentUpon>StudentAccount.aspx</DependentUpon>
@@ -207,12 +207,12 @@
     <Compile Include="StudentAccount.aspx.designer.cs">
       <DependentUpon>StudentAccount.aspx</DependentUpon>
     </Compile>
-    <Compile Include="updateProfile.aspx.cs">
-      <DependentUpon>updateProfile.aspx</DependentUpon>
+    <Compile Include="ApplicationPage.aspx.cs">
+      <DependentUpon>ApplicationPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="updateProfile.aspx.designer.cs">
-      <DependentUpon>updateProfile.aspx</DependentUpon>
+    <Compile Include="ApplicationPage.aspx.designer.cs">
+      <DependentUpon>ApplicationPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

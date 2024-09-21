@@ -24,39 +24,48 @@ namespace TechConnect_CMPG223_Project
         protected global::System.Web.UI.HtmlControls.HtmlForm registerForm;
 
         /// <summary>
-        /// ListBox1 control.
+        /// fullNames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.Label fullNames;
 
         /// <summary>
-        /// MyApplication control.
+        /// surname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MyApplication;
+        protected global::System.Web.UI.WebControls.Label surname;
 
         /// <summary>
-        /// manageprofile control.
+        /// idnumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button manageprofile;
+        protected global::System.Web.UI.WebControls.Label idnumber;
 
         /// <summary>
-        /// logout control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
+        protected global::System.Web.UI.WebControls.Label txtEmail;
+
+        /// <summary>
+        /// txtPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtPhone;
     }
 }
