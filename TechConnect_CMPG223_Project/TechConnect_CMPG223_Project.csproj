@@ -138,6 +138,7 @@
     <Content Include="Moire - Baikal _ Sample.jpg" />
     <Content Include="signupPage.aspx" />
     <Content Include="ApplicationPage.aspx" />
+    <Content Include="StudentAccount.aspx" />
     <Content Include="updateProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -198,6 +199,13 @@
     </Compile>
     <Compile Include="ApplicationPage.aspx.designer.cs">
       <DependentUpon>ApplicationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentAccount.aspx.cs">
+      <DependentUpon>StudentAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAccount.aspx.designer.cs">
+      <DependentUpon>StudentAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="updateProfile.aspx.cs">
       <DependentUpon>updateProfile.aspx</DependentUpon>

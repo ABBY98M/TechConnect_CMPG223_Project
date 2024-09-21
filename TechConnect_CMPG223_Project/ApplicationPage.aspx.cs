@@ -15,5 +15,10 @@ namespace TechConnect_CMPG223_Project
         {
 
         }
+
+        protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

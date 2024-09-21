@@ -88,7 +88,7 @@
         <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter your email or ID number" required></asp:TextBox>
         
         <label for="txtPassword">Password</label>
-        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter your password" required></asp:TextBox><br />
+        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter your password" required OnTextChanged="txtPassword_TextChanged"></asp:TextBox><br />
         
         <div>
             <label for="robotCheck">

@@ -59,7 +59,7 @@ namespace TechConnect_CMPG223_Project
                         if (userCount > 0)
                         {
                             // User exists, redirect to the application page
-                            Response.Redirect("ApplicationPage.aspx");
+                            Response.Redirect("StudentAccount.aspx");
                         }
                         else
                         {
@@ -74,6 +74,11 @@ namespace TechConnect_CMPG223_Project
                 // Handle any errors that occur during the process
                 Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
             }
+        }
+
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
