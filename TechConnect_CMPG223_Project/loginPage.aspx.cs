@@ -57,8 +57,9 @@ namespace TechConnect_CMPG223_Project
 
                         // Check if a user was found
                         if (userCount > 0)
-                        {
-                            // User exists, redirect to the application page
+
+                        {// User exists, save email to session and redirect to Student Account page
+                            Session["Email"] = email; // Save email in session
                             Response.Redirect("StudentAccount.aspx");
                         }
                         else

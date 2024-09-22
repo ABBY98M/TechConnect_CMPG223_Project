@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApplicationPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.registrationPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApplicationPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.ApplicationPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,7 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
-        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], textarea, select {
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select {
             width: 90%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -70,10 +70,9 @@
 <div class="container" style="background-image: url('Moire - Baikal _ Sample.jpg')">
     <h1>Tech-Connect Bursary Application</h1>
     
-    <form id="registerForm" runat="server">
+    <form id="ApplicationPage" runat="server">
         <h2>1. Personal Details</h2>
         
-        <div class="form-group">
         <div class="form-group">
             <label for="fullNames">Full Names</label>
             <asp:Label ID="fullNames" runat="server" Text="Logged-in Full Names"></asp:Label>
@@ -102,142 +101,135 @@
         <div class="form-group">
             <label for="gender">Gender</label>
             <div class="radio-group">
-                <label><input type="radio" name="gender" value="Male" required checked="true"> Male</label>
-                <label><input type="radio" name="gender" value="Female" required> Female<div class="form-group">
+                <asp:RadioButton ID="rbMale" runat="server" GroupName="gender" Text="Male" Value="Male" required OnCheckedChanged="rbMale_CheckedChanged" />
+                <asp:RadioButton ID="rbFemale" runat="server" GroupName="gender" Text="Female" Value="Female" required />
+            </div>
         </div>
 
         <div class="form-group">
             <label for="nationality">Nationality</label>
-            <select id="nationality" required name="D1">
-                <option value="" disabled selected>Select your nationality</option>
-                <option value="South African">South African</option>
-                <option value="Other">Other</option>
-            </select>
+            <asp:DropDownList ID="ddlNationality" runat="server" required>
+                <asp:ListItem Text="Select your nationality" Value="" />
+                <asp:ListItem Text="South African" Value="South African" />
+                <asp:ListItem Text="Other" Value="Other" />
+            </asp:DropDownList>
         </div>
 
         <div class="form-group">
             <label for="homeLanguage">Home Language</label>
-            <select id="homeLanguage" required name="D2">
-                <option value="" disabled selected>Select your home language</option>
-                <option value="English">English</option>
-                <option value="Afrikaans">Afrikaans</option>
-                <option value="Zulu">Zulu</option>
-                <!-- Add more languages as necessary -->
-            </select>
+            <asp:DropDownList ID="ddlHomeLanguage" runat="server" required>
+                <asp:ListItem Text="Select your home language" Value="" />
+                <asp:ListItem Text="English" Value="English" />
+                <asp:ListItem Text="Afrikaans" Value="Afrikaans" />
+                <asp:ListItem Text="Zulu" Value="Zulu" />
+            </asp:DropDownList>
         </div>
 
         <div class="form-group">
             <label for="residentialAddress">Residential Address</label>
-            <textarea id="residentialAddress" rows="3" placeholder="Enter your residential address" required cols="20" name="S1"></textarea>
+            <asp:TextBox ID="txtResidentialAddress" runat="server" TextMode="MultiLine" Rows="3" placeholder="Enter your residential address" required></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label for="postalAddress">Postal Address</label>
-            <textarea id="postalAddress" rows="3" placeholder="Enter your postal address" required cols="20" name="S2"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtPostalAddress" runat="server" TextMode="MultiLine" Rows="3" placeholder="Enter your postal address" required></asp:TextBox>
+        </div>
 
         <h2>2. Academic Information</h2>
 
         <div class="form-group">
             <label for="highestQualification">Highest Qualification</label>
-            <select id="highestQualification" required name="D3">
-                <option value="" disabled selected>Select your highest qualification</option>
-                <option value="High School">High School</option>
-                <option value="Undergraduate">Undergraduate</option>
-                <!-- Add more qualification options -->
-            </select>
+            <asp:DropDownList ID="ddlHighestQualification" runat="server" required>
+                <asp:ListItem Text="Select your highest qualification" Value="" />
+                <asp:ListItem Text="High School" Value="High School" />
+                <asp:ListItem Text="Undergraduate" Value="Undergraduate" />
+            </asp:DropDownList>
         </div>
 
         <div class="form-group">
             <label for="currentInstitution">Current Institution</label>
-            <input type="text" id="currentInstitution" placeholder="Enter your current institution" required>
+            <asp:TextBox ID="txtCurrentInstitution" runat="server" placeholder="Enter your current institution" required></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label for="yearOfStudy">Year of Study</label>
-            <input type="number" id="yearOfStudy" placeholder="Enter your year of study" required>
+            <asp:TextBox ID="txtYearOfStudy" runat="server" placeholder="Enter your year of study" required></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label for="fieldOfStudy">Field of Study</label>
-            <input type="text" id="fieldOfStudy" placeholder="Enter your field of study" required>
+            <asp:TextBox ID="txtFieldOfStudy" runat="server" placeholder="Enter your field of study" required></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label for="apsScore">APS Score</label>
-            <input type="number" id="apsScore" placeholder="Enter your APS score" required>
+            <asp:TextBox ID="txtAPSScore" runat="server" placeholder="Enter your APS score" required></asp:TextBox>
         </div>
 
         <h2>3. Financial Information</h2>
 
         <div class="form-group">
             <label for="householdIncome">Household Income</label>
-            <select id="householdIncome" required name="D4">
-                <option value="" disabled selected>Select your household income range</option>
-                <option value="Below R150,000">Below R150,000</option>
-                <option value="R150,000 - R300,000">R150,000 - R300,000</option>
-                <option value="Above R300,000">Above R300,000</option>
-            </select>
+            <asp:DropDownList ID="ddlHouseholdIncome" runat="server" required>
+                <asp:ListItem Text="Select your household income range" Value="" />
+                <asp:ListItem Text="Below R150,000" Value="Below R150,000" />
+                <asp:ListItem Text="R150,000 - R300,000" Value="R150,000 - R300,000" />
+                <asp:ListItem Text="Above R300,000" Value="Above R300,000" />
+            </asp:DropDownList>
         </div>
 
         <div class="form-group">
             <label for="dependents">Number of Dependents</label>
-            <input type="number" id="dependents" min="0" placeholder="Enter number of dependents" required>
+            <asp:TextBox ID="txtDependents" runat="server" placeholder="Enter number of dependents" required></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label>Receiving other bursary/scholarship?</label>
             <div class="radio-group">
-                <label><input type="radio" name="receivingBursary" value="yes" required checked="true"> Yes</label>
-                <label><input type="radio" name="receivingBursary" value="no" required> No</label>
+                <asp:RadioButton ID="rbReceivingBursaryYes" runat="server" GroupName="receivingBursary" Text="Yes" Value="yes" required />
+                <asp:RadioButton ID="rbReceivingBursaryNo" runat="server" GroupName="receivingBursary" Text="No" Value="no" required />
             </div>
         </div>
 
         <div class="form-group" id="bursaryDetails" style="display: none;">
             <label for="otherBursary">Which bursary?</label>
-            <input type="text" id="otherBursary" placeholder="Enter the bursary/scholarship name">
+            <asp:TextBox ID="txtOtherBursary" runat="server" placeholder="Enter the bursary/scholarship name"></asp:TextBox>
         </div>
 
         <div class="form-group">
             <label for="motivationLetter">Motivation Letter</label>
-            <textarea id="motivationLetter" rows="4" placeholder="Enter your motivation letter" required cols="20" name="S3"></textarea>
+            <asp:TextBox ID="txtMotivationLetter" runat="server" TextMode="MultiLine" Rows="4" placeholder="Enter your motivation letter" required></asp:TextBox>
         </div>
 
         <h2>4. Documents Upload</h2>
 
         <div class="form-group">
             <label for="idDocument">Upload ID Document</label>
-            <input type="file" id="idDocument" required>
+            <asp:FileUpload ID="fuIDDocument" runat="server" required />
         </div>
 
         <div class="form-group">
             <label for="proofResidence">Upload Proof of Residence</label>
-            <input type="file" id="proofResidence" required>
+            <asp:FileUpload ID="fuProofResidence" runat="server" required />
         </div>
 
-                <div class="form-group">
+        <div class="form-group">
             <label for="certifiedResults">Upload Certified Academic Results</label>
-            <input type="file" id="certifiedResults" required>
+            <asp:FileUpload ID="fuCertifiedResults" runat="server" required />
         </div>
 
         <h2>5. Terms and Conditions</h2>
-<div class="terms-group">
-    <label>
-        <input type="checkbox" name="terms" required> 
-        I agree to the <a href="termsAndConditions.html" target="_blank">Terms and Conditions</a>
-    </label>
-</div>
 
-<div class="form-group">
-    <button type="submit">Submit Application</button>
-</div>
+        <div class="terms-group">
+            <label>
+                <asp:CheckBox ID="cbTerms" runat="server" required />
+                I agree to the <a href="termsAndConditions.html" target="_blank">terms and conditions</a>.
+            </label>
         </div>
 
-                </label>
-            </div>
+        <div class="form-group">
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit Application" OnClick="btnSubmit_Click" />
         </div>
-
-        </div>
-        
     </form>
 </div>
 

@@ -130,6 +130,7 @@
     <Content Include="2023_dentsu_Bursary_Scheme_Youth_Opportunities_Hub.jpg" />
     <Content Include="adminDashboard.aspx" />
     <Content Include="adminLogin.aspx" />
+    <Content Include="ApplicationPage.aspx" />
     <Content Include="checkStatus.aspx" />
     <Content Include="defaultPage.aspx" />
     <Content Include="Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" />
@@ -137,9 +138,7 @@
     <Content Include="loginPage.aspx" />
     <Content Include="Moire - Baikal _ Sample.jpg" />
     <Content Include="signupPage.aspx" />
-    <Content Include="ProfilePage.aspx" />
     <Content Include="StudentAccount.aspx" />
-    <Content Include="ApplicationPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +155,13 @@
     </Compile>
     <Compile Include="adminLogin.aspx.designer.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationPage.aspx.cs">
+      <DependentUpon>ApplicationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationPage.aspx.designer.cs">
+      <DependentUpon>ApplicationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="checkStatus.aspx.cs">
       <DependentUpon>checkStatus.aspx</DependentUpon>
@@ -193,26 +199,12 @@
     <Compile Include="signupPage.aspx.designer.cs">
       <DependentUpon>signupPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProfilePage.aspx.cs">
-      <DependentUpon>ProfilePage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ProfilePage.aspx.designer.cs">
-      <DependentUpon>ProfilePage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="StudentAccount.aspx.cs">
       <DependentUpon>StudentAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StudentAccount.aspx.designer.cs">
       <DependentUpon>StudentAccount.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ApplicationPage.aspx.cs">
-      <DependentUpon>ApplicationPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ApplicationPage.aspx.designer.cs">
-      <DependentUpon>ApplicationPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -227,7 +219,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Uploads\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
