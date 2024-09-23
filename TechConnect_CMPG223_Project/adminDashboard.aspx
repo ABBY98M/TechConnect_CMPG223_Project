@@ -65,7 +65,7 @@
     
     <div class="form-group">
         <label for="recordList">Student Records and Bursary Applications</label>
-        <select id="recordList" class="auto-style1" size="10">
+        <select id="recordList" class="auto-style1" size="10" name="lstBoxUserInfo">
             <!-- Records will be populated here -->
         </select>
     </div>
