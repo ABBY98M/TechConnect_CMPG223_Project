@@ -195,24 +195,6 @@ namespace TechConnect_CMPG223_Project
         protected global::System.Web.UI.WebControls.RadioButton rbReceivingBursaryNo;
 
         /// <summary>
-        /// txtOtherBursary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOtherBursary;
-
-        /// <summary>
-        /// txtMotivationLetter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMotivationLetter;
-
-        /// <summary>
         /// fuIDDocument control.
         /// </summary>
         /// <remarks>
@@ -238,15 +220,6 @@ namespace TechConnect_CMPG223_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuCertifiedResults;
-
-        /// <summary>
-        /// cbTerms control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbTerms;
 
         /// <summary>
         /// btnSubmit control.

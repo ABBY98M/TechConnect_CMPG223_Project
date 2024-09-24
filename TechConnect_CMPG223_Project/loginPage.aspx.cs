@@ -19,6 +19,7 @@ namespace TechConnect_CMPG223_Project
         // Event handler for the Login button click
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            
             // Get the entered data from the form fields
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
@@ -26,21 +27,18 @@ namespace TechConnect_CMPG223_Project
             // Basic validation: Check if both fields are filled
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                // Display an error if any field is empty
                 Response.Write("<script>alert('Please fill out both fields.');</script>");
                 return;
             }
 
-            // Query to check if the user exists
             try
             {
                 // Get the connection string from Web.config
                 string connectionString = ConfigurationManager.ConnectionStrings["BursaryDBConnectionString"].ConnectionString;
 
-                // Define the SQL query to check for user credentials
-                string query = "SELECT COUNT(*) FROM Student WHERE Email = @Email AND Password = @Password";
+                // Modify the query to retrieve StudentID as well
+                string query = "SELECT StudentID FROM Student WHERE Email = @Email AND Password = @Password";
 
-                // Use SQL connection and command to execute the query
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand(query, con))
@@ -49,22 +47,25 @@ namespace TechConnect_CMPG223_Project
                         cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@Password", password);
 
-                        // Open the connection
                         con.Open();
 
-                        // Execute the query to check for user
-                        int userCount = Convert.ToInt32(cmd.ExecuteScalar());
+                        // Retrieve the StudentID
+                        object result = cmd.ExecuteScalar();
 
                         // Check if a user was found
-                        if (userCount > 0)
+                        if (result != null)
+                        {
+                            int studentID = Convert.ToInt32(result);
 
-                        {// User exists, save email to session and redirect to Student Account page
-                            Session["Email"] = email; // Save email in session
+                            // Save email and StudentID in session
+                            Session["Email"] = email;
+                            Session["StudentID"] = studentID;  // Set the StudentID in the session
+
+                            // Redirect to Student Account page
                             Response.Redirect("StudentAccount.aspx");
                         }
                         else
                         {
-                            // Display an error message if login failed
                             Response.Write("<script>alert('Invalid email or password.');</script>");
                         }
                     }
@@ -76,6 +77,7 @@ namespace TechConnect_CMPG223_Project
                 Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
             }
         }
+
 
         protected void txtPassword_TextChanged(object sender, EventArgs e)
         {
