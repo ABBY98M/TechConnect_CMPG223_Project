@@ -49,7 +49,7 @@ namespace TechConnect_CMPG223_Project
 
                         con.Open();
 
-                        // Retrieve the StudentID
+                        // Retrieve the StudentID here
                         object result = cmd.ExecuteScalar();
 
                         // Check if a user was found
