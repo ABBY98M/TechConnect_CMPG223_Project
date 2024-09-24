@@ -126,8 +126,12 @@
     <Content Include="2023_4 dentsu SA Bursary Scheme for Young South Africans » Youth Opportunities Hub.jpg" />
     <Content Include="2023_dentsu_Bursary_Scheme_Youth_Opportunities_Hub.jpg" />
     <Content Include="adminDashboard.aspx" />
-    <Content Include="adminLogin.aspx" />
+    <Content Include="AdminLogin.aspx" />
     <Content Include="ApplicationPage.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="checkStatus.aspx" />
     <Content Include="defaultPage.aspx" />
     <Content Include="Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" />
@@ -146,12 +150,12 @@
     <Compile Include="adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminLogin.aspx.cs">
-      <DependentUpon>adminLogin.aspx</DependentUpon>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminLogin.aspx.designer.cs">
-      <DependentUpon>adminLogin.aspx</DependentUpon>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ApplicationPage.aspx.cs">
       <DependentUpon>ApplicationPage.aspx</DependentUpon>

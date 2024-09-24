@@ -50,25 +50,20 @@
             max-height: 200px;
             overflow-y: auto;
         }
-    	.auto-style1 {
-			margin-top: 20px;
-			max-height: 200px;
-			overflow-y: auto;
-			width: 698px;
-		}
-    </style>
+    	</style>
 </head>
 <body>
+
+    <form id="form1" runat="server">
 
 <div class="container">
     <h1>Admin Dashboard</h1>
     
     <div class="form-group">
-        <label for="recordList">Student Records and Bursary Applications</label>
-        <select id="recordList" class="auto-style1" size="10" name="lstBoxUserInfo">
-            <!-- Records will be populated here -->
-        </select>
-    </div>
+        <label for="recordList">Student Records and Bursary Applications<br />
+        <asp:ListBox ID="lstbxRecords" runat="server" Height="157px" Width="946px"></asp:ListBox>
+        </label>
+        &nbsp;</div>
 
     <div class="form-group">
         <button type="button" onclick="sortRecords('asc')">Sort Ascending</button>
@@ -82,7 +77,8 @@
 
     <div class="form-group">
         <label for="adminComment">Admin Comment</label>
-        <textarea id="adminComment" rows="3" placeholder="Enter your comment"></textarea>
+        <br />
+&nbsp;<asp:TextBox ID="txtAdminComment" runat="server" Height="90px" Width="252px"></asp:TextBox>
     </div>
 
     <div class="form-group">
@@ -188,6 +184,8 @@
 		populateRecordList();
 	};
 </script>
+
+    </form>
 
 </body>
 </html>

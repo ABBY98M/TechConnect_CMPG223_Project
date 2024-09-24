@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminLogin.aspx.cs" Inherits="TechConnect_CMPG223_Project.adminLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="TechConnect_CMPG223_Project.AdminLogin" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,38 +59,17 @@
     <h1>Admin Login</h1>
     
     <form id="adminLoginForm" runat="server">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username" required>
-        </div>
+        <div class="form-group"> <label for="username">Username</label>
+			<asp:TextBox ID="txtbUsername" runat="server" placeholder="Enter your email or ID number" required></asp:TextBox>
+
+       <div class="form-group"> <label for="password">Password</label>
+			<asp:TextBox ID="txtbPassword" runat="server" TextMode="Password" placeholder="Enter your password" required OnTextChanged="txtbPassword_TextChanged"></asp:TextBox><br />
         
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<br />
-			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click" />
-        </div>
+		</div> 
+        <div class="form-group"> <button type="submit">Log in</button> </div>
         
         </form>
 </div>
-
-<script>
-    document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        // Simulate login logic (replace with actual authentication logic)
-        if (username === "admin" && password === "password123") { // Example credentials
-            alert('Login successful! Redirecting to admin dashboard...');
-            window.location.href = 'adminDashboard.html'; // Change to your actual admin dashboard page
-        } else {
-            alert('Invalid username or password. Please try again.');
-        }
-    });
-</script>
 
 </body>
 </html>
