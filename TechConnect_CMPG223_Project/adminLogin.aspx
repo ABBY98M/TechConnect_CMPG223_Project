@@ -1,4 +1,4 @@
-﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminLogin.aspx.cs" Inherits="TechConnect_CMPG223_Project.adminLogin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminLogin.aspx.cs" Inherits="TechConnect_CMPG223_Project.adminLogin" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,14 +61,16 @@
     <form id="adminLoginForm" runat="server">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter your username" required>
-        </div>
+            <asp:TextBox ID="txtbUsename" runat="server" Width="1263px"></asp:TextBox>
+            <br />
+&nbsp;</div>
         
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="password">Password</label> &nbsp;<asp:TextBox ID="txtbPaasword" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<br />
-			<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click" />
         </div>
         

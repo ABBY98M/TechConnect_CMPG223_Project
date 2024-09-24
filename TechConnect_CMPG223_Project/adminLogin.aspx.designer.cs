@@ -24,6 +24,24 @@ namespace TechConnect_CMPG223_Project
         protected global::System.Web.UI.HtmlControls.HtmlForm adminLoginForm;
 
         /// <summary>
+        /// txtbUsename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbUsename;
+
+        /// <summary>
+        /// txtbPaasword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtbPaasword;
+
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>

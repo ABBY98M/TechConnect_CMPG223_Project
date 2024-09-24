@@ -12,6 +12,7 @@ namespace TechConnect_CMPG223_Project
     public partial class adminDashboard : Page
     {
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|//Student.mdf;Integrated Security=True");
+        private List<string> userInfoList = new List<string>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,28 +36,58 @@ namespace TechConnect_CMPG223_Project
                     while (reader.Read())
                     {
                         string userInfo = $"{reader["FullNames"]} {reader["Surname"]} - {reader["Email"]} - {reader["Institution"]}";
-
-                        if (lstBoxUserInfo != null)
-                        {
-                            lstUserInfo.Items.Add(userInfo);
-                        }
-                        else
-                        {
-                            Response.Write("Error: lstUserInfo is null");
-                        }
+                        userInfoList.Add(userInfo);
                     }
 
                     reader.Close();
+                    DisplayUserInfo(userInfoList);
                 }
                 catch (Exception ex)
                 {
-                    // Handle any errors
                     Response.Write("Error: " + ex.Message);
                 }
                 finally
                 {
                     con.Close();
                 }
+            }
+        }
+
+        private void DisplayUserInfo(List<string> infoList)
+        {
+            lstbxRecords.Items.Clear();
+            foreach (string info in infoList)
+            {
+                lstbxRecords.Items.Add(info);
+            }
+        }
+
+        protected void btnSortAscending_Click(object sender, EventArgs e)
+        {
+            //Sorting the data in ascending order
+            List<string> sortedList = userInfoList.OrderBy(x => x).ToList();
+            DisplayUserInfo(sortedList);
+        }
+
+        protected void btnSortDescending_Click(object sender, EventArgs e)
+        {
+            //Sorting the data in descending order
+            List<string> sortedList = userInfoList.OrderByDescending(x => x).ToList();
+            DisplayUserInfo(sortedList);
+        }
+
+        protected void btnAddComment_Click(object sender, EventArgs e)
+        {
+            string comment = txtAdminComment.Text.Trim();
+            if (!string.IsNullOrEmpty(comment))
+            {
+                // Save the comment to the database or perform any other desired action
+                Response.Write("<script>alert('Comment added successfully.');</script>");
+                txtAdminComment.Text = string.Empty; // Clear the textarea
+            }
+            else
+            {
+                Response.Write("<script>alert('Please enter a comment.');</script>");
             }
         }
     }

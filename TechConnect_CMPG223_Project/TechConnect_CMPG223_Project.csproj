@@ -128,6 +128,10 @@
     <Content Include="adminDashboard.aspx" />
     <Content Include="adminLogin.aspx" />
     <Content Include="ApplicationPage.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="checkStatus.aspx" />
     <Content Include="defaultPage.aspx" />
     <Content Include="Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" />
