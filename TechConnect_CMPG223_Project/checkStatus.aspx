@@ -24,6 +24,7 @@
         h1 {
             text-align: center;
             color: #007bff;
+            font-style: italic;
         }
         .status-result {
             margin-top: 20px;
@@ -45,10 +46,10 @@
 <body>
 
 <div class="container" style="background-image: url('Moire - Baikal _ Sample.jpg')">
-    <h1>Check Status</h1>
+    <h1>&nbsp;Welcome</h1>
     
     <div id="statusResult" class="status-result">
-        <h2>Your Bursary Applications</h2>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Application Admision Status</h2>
         <select id="resultList" class="bursary-list" size="10"></select>
     </div>
 </div>

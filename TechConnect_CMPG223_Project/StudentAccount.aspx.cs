@@ -22,7 +22,7 @@ namespace TechConnect_CMPG223_Project
         protected void ManageProfile_Click(object sender, EventArgs e)
         {
             // Redirect to UpdatePage
-            Response.Redirect("updateProfile.aspx");
+            Response.Redirect("ManageProfile.aspx");
         }
 
         protected void Logout_Click(object sender, EventArgs e)
@@ -31,5 +31,9 @@ namespace TechConnect_CMPG223_Project
             Session.Clear(); // Clear session data
             Response.Redirect("defaultPage.aspx"); // Redirect to home page
         }
-    }
+            protected void ApplicationStatus_Click(object sender, EventArgs e)
+            {
+                Response.Redirect("StatusPage.aspx"); // Ensure you create a StatusPage.aspx
+            }
+        }
 }

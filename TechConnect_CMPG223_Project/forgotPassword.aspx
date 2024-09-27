@@ -24,6 +24,7 @@
         h1 {
             text-align: center;
             color: #007bff;
+            font-style: italic;
         }
         .form-group {
             margin-bottom: 20px;

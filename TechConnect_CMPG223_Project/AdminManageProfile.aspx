@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signupPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.signupPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminManageProfile.aspx.cs" Inherits="TechConnect_CMPG223_Project.AdminManageProfile" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,49 +54,53 @@
         button:hover {
             background-color: #0056b3;
         }
+        .newStyle1 {
+            border-color: #006666;
+        }
     </style>
 </head>
 <body>
 
 <div class="container" style="background-color: white; background-image: url('Moire - Baikal _ Sample.jpg');">
-    <h1><em>Register</em></h1>
+    <h1><em class="newStyle1">Manage Your Profile</em></h1>
     
     <form id="signupForm" runat="server">
         <div class="form-group">
             <label for="idNumber">SA ID Number</label>
-            <asp:TextBox ID="txtIdNumber" runat="server" />
+            <asp:TextBox ID="txtIdNmb" runat="server" />
         </div>
         <div class="form-group">
             <label for="email">E-mail Address</label>
-            <asp:TextBox ID="txtEmail" runat="server" />
+            <asp:TextBox ID="txtEmailaddr" runat="server" />
         </div>
         <div class="form-group">
-            <label for="firstName">First Name</label>
-            <asp:TextBox ID="txtFirstName" runat="server" />
+            <label for="firstName">Name</label>
+            <asp:TextBox ID="txtName" runat="server" />
         </div>
         <div class="form-group">
-            <label for="cellNumber">Cellphone Number</label>
-            <asp:TextBox ID="txtCellNumber" runat="server" />
-        </div>
+            <label for="cellNumber">Role:<br />
+&nbsp;<asp:DropDownList ID="drpdwnrole" runat="server">
+    <asp:ListItem Value="Admin">Admin</asp:ListItem>
+    <asp:ListItem Value="SuperAdmin">SuperAdmin</asp:ListItem>
+    <asp:ListItem Value="Reviewer">Reviewer</asp:ListItem>
+    <asp:ListItem Value="Moderator">Moderator</asp:ListItem>
+    </asp:DropDownList>
+
+
+            </label>&nbsp;</div>
         <div class="form-group">
-            <label for="surname">Surname</label>
-            <asp:TextBox ID="txtSurname" runat="server" />
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" />
-            <p>A password should be 16 characters or more.</p>
+            <label for="password">
+            Password</label>
+
+            <asp:TextBox ID="txtPsswd" runat="server" TextMode="Password" />
         </div>
 
-        <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Register" Height="30px" Width="169px" />
-
-        <div class="login-link">
-            <p>Already registered? 
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/loginPage.aspx">Login</asp:HyperLink>
-            </p>
-        </div>
-    </form>
-</div>
-
+            <div class="btn-group">
+                <asp:Button ID="btnUpdateadmin" runat="server" Text="Update" OnClick="btnUpdate_Click" Width="141px" />
+                <asp:Button ID="btnDeleteAdmin" runat="server" Text="Delete" OnClick="btnDelete_Click" Width="144px" />
+            </div>
+        </form>
+    </div>
 </body>
 </html>
+

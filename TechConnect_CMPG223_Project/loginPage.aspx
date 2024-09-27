@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.loginPage" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.loginPage" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Tech-Connect</title>
+    <titleWelcome to Tech-Connect</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -28,6 +28,7 @@
         h1 {
             margin-bottom: 20px;
             color: #007bff;
+            font-style: italic;
         }
         label {
             display: block;
@@ -81,9 +82,9 @@
 <form id="form2" runat="server">
     <div class="auto-style1" style="background-image: url('Moire - Baikal _ Sample.jpg');">
         <h1>
-            <asp:Image ID="Image1" runat="server" Height="55px" ImageUrl="~/Download South Africa, Flag, Fingerprint_ Royalty-Free Stock Illustration Image.jpeg" Width="45px" />
+            <asp:Image ID="Image1" runat="server" Height="55px" ImageUrl="~/BookLogo.png" Width="45px" />
         </h1>
-        <h1>Welcome to Tech-Connect</h1>
+        <h1>Welcome to Tech-Connectt</h1>
         <label for="txtEmail">Email / ID Number</label>
         <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter your email or ID number" required></asp:TextBox>
         

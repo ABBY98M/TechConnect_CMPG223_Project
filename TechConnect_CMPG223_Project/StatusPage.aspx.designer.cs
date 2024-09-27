@@ -11,52 +11,43 @@ namespace TechConnect_CMPG223_Project
 {
 
 
-    public partial class StudentAccount
+    public partial class StudentStatus
     {
 
         /// <summary>
-        /// registerForm control.
+        /// signupForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm registerForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm signupForm;
 
         /// <summary>
-        /// MyApplication control.
+        /// LblStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MyApplication;
+        protected global::System.Web.UI.WebControls.Label LblStatus;
 
         /// <summary>
-        /// manageprofile control.
+        /// LstbxFeedback control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button manageprofile;
+        protected global::System.Web.UI.WebControls.ListBox LstbxFeedback;
 
         /// <summary>
-        /// btnApplicationStatus control.
+        /// BttnLogout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApplicationStatus;
-
-        /// <summary>
-        /// logout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
+        protected global::System.Web.UI.WebControls.Button BttnLogout;
     }
 }

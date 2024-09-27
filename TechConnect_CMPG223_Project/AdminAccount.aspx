@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentAccount.aspx.cs" Inherits="TechConnect_CMPG223_Project.StudentAccount" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminAccount.aspx.cs" Inherits="TechConnect_CMPG223_Project.AdminAccount" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,13 +66,19 @@
             border-radius: 50%; /* Makes it circular */
             object-fit: cover; /* Ensures the image covers the circle */
             border: 2px solid #007bff; /* Optional: adds a border around the circle */
+            margin-right: 10px;
+        }
+        .status-label {
+            color: #007bff; /* Color for status label */
+            text-align: center; /* Center the status text */
+            margin-top: 20px; /* Add some space above */
         }
     </style>
 </head>
 <body>
 
 <div class="container" style="background-image: url('Moire - Baikal _ Sample.jpg')">
-
+    
     <form id="registerForm" runat="server">
         <h1>Welcome</h1>
         
@@ -83,19 +90,23 @@
         <h2>&nbsp;</h2>
 
         <div class="form-group">
-            <asp:Button ID="MyApplication" runat="server" Text="MY APPLICATIONS" OnClick="MyApplication_Click" Width="368px" />
+            <asp:Button ID="Applications" runat="server" Text=" APPLICATIONS" OnClick="MyApplication_Click" Width="368px" />
         </div>
 
         <div class="form-group">
-            <asp:Button ID="manageprofile" runat="server" Text="MANAGE PROFILE" OnClick="ManageProfile_Click" Width="367px" />
+            <asp:Button ID="mngeprofile" runat="server" Text="MANAGE PROFILE" OnClick="ManageProfile_Click" Width="367px" />
         </div>
         
         <div class="form-group">
-            <asp:Button ID="btnApplicationStatus" runat="server" Text="APPLICATION STATUS" OnClick="ApplicationStatus_Click" Width="368px" />
+            <asp:Button ID="rviewBttn" runat="server" Text="REVIEWED APPLICATIONS" OnClick="ApplicationStatus_Click" Width="368px" />
         </div>
-        <asp:Button ID="logout" runat="server" Text="LOGOUT" OnClick="Logout_Click" Width="362px" />
+        <asp:Button ID="lgout" runat="server" Text="LOGOUT" OnClick="Logout_Click" Width="362px" />
     </form>
 </div>
+
+</body>
+</html>
+
 
 </body>
 </html>

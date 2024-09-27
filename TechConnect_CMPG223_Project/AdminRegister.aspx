@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signupPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.signupPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminRegister.aspx.cs" Inherits="TechConnect_CMPG223_Project.AdminRegister" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - TechConnect</title>
+    <title>Admin Register - TechConnect</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,6 +24,7 @@
         h1 {
             text-align: center;
             color: #007bff;
+            font-style: italic;
         }
         form {
             margin-top: 20px;
@@ -59,40 +60,36 @@
 <body>
 
 <div class="container" style="background-color: white; background-image: url('Moire - Baikal _ Sample.jpg');">
-    <h1><em>Register</em></h1>
+    <h1>Admin Register</h1>
     
-    <form id="signupForm" runat="server">
+    <form id="AdminRegisterForm" runat="server">
         <div class="form-group">
             <label for="idNumber">SA ID Number</label>
-            <asp:TextBox ID="txtIdNumber" runat="server" />
+            <asp:TextBox ID="txtIDnumber" runat="server" />
         </div>
         <div class="form-group">
             <label for="email">E-mail Address</label>
-            <asp:TextBox ID="txtEmail" runat="server" />
+            <asp:TextBox ID="txTEmail" runat="server" />
         </div>
         <div class="form-group">
             <label for="firstName">First Name</label>
-            <asp:TextBox ID="txtFirstName" runat="server" />
+            <asp:TextBox ID="txtFirstname" runat="server" />
         </div>
         <div class="form-group">
-            <label for="cellNumber">Cellphone Number</label>
-            <asp:TextBox ID="txtCellNumber" runat="server" />
-        </div>
-        <div class="form-group">
-            <label for="surname">Surname</label>
-            <asp:TextBox ID="txtSurname" runat="server" />
+            <label for="role">Role</label>
+            <asp:TextBox ID="txtRole" runat="server" />
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" />
+            <asp:TextBox ID="txtpassword" runat="server" TextMode="Password" />
             <p>A password should be 16 characters or more.</p>
         </div>
 
-        <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Register" Height="30px" Width="169px" />
+        <asp:Button ID="btnregister" runat="server" OnClick="btnRegister_Click" Text="Register" Height="30px" Width="169px" />
 
         <div class="login-link">
             <p>Already registered? 
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/loginPage.aspx">Login</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdminLogin.aspx">Login</asp:HyperLink>
             </p>
         </div>
     </form>

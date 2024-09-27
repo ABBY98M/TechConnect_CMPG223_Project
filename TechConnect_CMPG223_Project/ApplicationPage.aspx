@@ -24,6 +24,7 @@
         h1 {
             text-align: center;
             color: #007bff;
+            font-style: italic;
         }
         form {
             margin-top: 20px;
@@ -71,7 +72,7 @@
     <h1>Tech-Connect Bursary Application</h1>
     
     <form id="ApplicationPage" runat="server">
-        <h2>1. Personal Details</h2>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Personal Details</h2>
         
         <div class="form-group">
             <label for="fullNames">Full Names</label>
@@ -98,8 +99,7 @@
             <asp:Label ID="txtPhone" runat="server" Text="Logged-in Phone"></asp:Label>
         </div>
         
-        <div></div> class="form-group">
-    <label for="gender">Gender</label>
+        &nbsp;<label for="gender">Gender</label>
     <div class="radio-group">
         <div>
             <asp:RadioButton ID="rbMale" runat="server" GroupName="gender" Text="Male" />
@@ -120,9 +120,17 @@
             <label for="homeLanguage">Home Language</label>
             <asp:DropDownList ID="ddlHomeLanguage" runat="server">
                 <asp:ListItem Text="Select your home language" Value="" />
-                <asp:ListItem Text="English" Value="English" />
-                <asp:ListItem Text="Afrikaans" Value="Afrikaans" />
-                <asp:ListItem Text="Zulu" Value="Zulu" />
+<asp:ListItem Text="English" Value="English" />
+<asp:ListItem Text="Afrikaans" Value="Afrikaans" />
+<asp:ListItem Text="Zulu" Value="Zulu" />
+<asp:ListItem Text="Xhosa" Value="Xhosa" />
+<asp:ListItem Text="Sesotho" Value="Sesotho" />
+<asp:ListItem Text="Setswana" Value="Setswana" />
+<asp:ListItem Text="Sepedi" Value="Sepedi" />
+<asp:ListItem Text="Tshivenda" Value="Tshivenda" />
+<asp:ListItem Text="Xitsonga" Value="Xitsonga" />
+<asp:ListItem Text="Other" Value="Other" />
+
             </asp:DropDownList>
         </div>
         <div class="form-group">
@@ -133,7 +141,7 @@
             <label for="postalAddress">Postal Address</label>
             <asp:TextBox ID="txtPostalAddress" runat="server" TextMode="MultiLine" Rows="3" placeholder="Enter your postal address"></asp:TextBox>
         </div>
-        <h2>2. Academic Information</h2>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Academic Information</h2>
 
         <div class="form-group">
             <label for="highestQualification">Highest Qualification</label>
@@ -161,7 +169,7 @@
             <label for="apsScore">APS Score</label>
             <asp:TextBox ID="txtAPSScore" runat="server" placeholder="Enter your APS score" required></asp:TextBox>
         </div>
-        <h2>3. Financial Information</h2>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Financial Information</h2>
 
         <div class="form-group">
             <label for="householdIncome">Household Income</label>
@@ -187,7 +195,7 @@
             <asp:RadioButton ID="rbReceivingBursaryNo" runat="server" GroupName="receivingBursary" Text="No" />
         </div>
     </div>
-        <h2>4. Documents Upload</h2>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Documents Upload</h2>
 
         <div class="form-group">
             <label for="idDocument">Upload ID Document</label>

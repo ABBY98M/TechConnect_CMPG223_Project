@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="signupPage.aspx.cs" Inherits="TechConnect_CMPG223_Project.signupPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="TechConnect_CMPG223_Project.ManageProfile" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,7 @@
         h1 {
             text-align: center;
             color: #007bff;
+            font-style: italic;
         }
         form {
             margin-top: 20px;
@@ -59,7 +60,7 @@
 <body>
 
 <div class="container" style="background-color: white; background-image: url('Moire - Baikal _ Sample.jpg');">
-    <h1><em>Register</em></h1>
+    <h1>Manage Your Profile</h1>
     
     <form id="signupForm" runat="server">
         <div class="form-group">
@@ -85,18 +86,13 @@
         <div class="form-group">
             <label for="password">Password</label>
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" />
-            <p>A password should be 16 characters or more.</p>
         </div>
 
-        <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Register" Height="30px" Width="169px" />
-
-        <div class="login-link">
-            <p>Already registered? 
-                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/loginPage.aspx">Login</asp:HyperLink>
-            </p>
-        </div>
-    </form>
-</div>
-
+            <div class="btn-group">
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" Width="141px" />
+                <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" Width="144px" />
+            </div>
+        </form>
+    </div>
 </body>
 </html>

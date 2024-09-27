@@ -168,6 +168,8 @@ namespace TechConnect_CMPG223_Project
                         con.Open();
                         cmd.ExecuteNonQuery();
                         Response.Write("<script>alert('Application submitted successfully!');</script>");
+                        // Redirect to StudentAccount.aspx after success message
+                       // Response.Redirect("StudentAccount.aspx");
                     }
                     catch (Exception ex)
                     {
@@ -177,19 +179,24 @@ namespace TechConnect_CMPG223_Project
             }
         }
 
-        // Method to save the uploaded file and return the file path
+         //Method to save the uploaded file and return the file path
         private string SaveFile(FileUpload fileUpload)
         {
             string fileName = Path.GetFileName(fileUpload.FileName);
-            string filePath = Server.MapPath("~/UploadedDocuments/") + fileName; // Ensure this directory exists
+           string filePath = Server.MapPath("~/UploadedDocuments/") + fileName; // Ensure this directory exists
 
-            // Save the file to the server
-            fileUpload.SaveAs(filePath);
+            //Save the file to the server
+           fileUpload.SaveAs(filePath);
 
-            return "~/UploadedDocuments/" + fileName; // Return relative path to the database
+           return "~/UploadedDocuments/" + fileName; // Return relative path to the database
         }
+
+        
+
     }
-}
+    }
+
+
 
 
 

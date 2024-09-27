@@ -11,52 +11,34 @@ namespace TechConnect_CMPG223_Project
 {
 
 
-    public partial class StudentAccount
+    public partial class ReviewedApplications
     {
 
         /// <summary>
-        /// registerForm control.
+        /// AdminPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm registerForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm AdminPage;
 
         /// <summary>
-        /// MyApplication control.
+        /// LBxReviewd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MyApplication;
+        protected global::System.Web.UI.WebControls.ListBox LBxReviewd;
 
         /// <summary>
-        /// manageprofile control.
+        /// BttnBck control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button manageprofile;
-
-        /// <summary>
-        /// btnApplicationStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApplicationStatus;
-
-        /// <summary>
-        /// logout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
+        protected global::System.Web.UI.WebControls.Button BttnBck;
     }
 }
