@@ -11,7 +11,7 @@ namespace TechConnect_CMPG223_Project
 {
 
 
-	public partial class AdminLogin
+	public partial class adminLogin
 	{
 
 		/// <summary>
@@ -24,21 +24,12 @@ namespace TechConnect_CMPG223_Project
 		protected global::System.Web.UI.HtmlControls.HtmlForm adminLoginForm;
 
 		/// <summary>
-		/// txtbUsername control.
+		/// btnLogin control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtbUsername;
-
-		/// <summary>
-		/// txtbPassword control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtbPassword;
+		protected global::System.Web.UI.WebControls.Button btnLogin;
 	}
 }

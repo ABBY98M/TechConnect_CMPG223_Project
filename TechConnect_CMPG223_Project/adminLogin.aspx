@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminLogin.aspx.cs" Inherits="TechConnect_CMPG223_Project.AdminLogin" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminLogin.aspx.cs" Inherits="TechConnect_CMPG223_Project.adminLogin" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,14 +59,19 @@
     <h1>Admin Login</h1>
     
     <form id="adminLoginForm" runat="server">
-        <div class="form-group"> <label for="username">Username</label>
-			<asp:TextBox ID="txtbUsername" runat="server" placeholder="Enter your email or ID number" required></asp:TextBox>
-
-       <div class="form-group"> <label for="password">Password</label>
-			<asp:TextBox ID="txtbPassword" runat="server" TextMode="Password" placeholder="Enter your password" required OnTextChanged="txtbPassword_TextChanged"></asp:TextBox><br />
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+        </div>
         
-		</div> 
-        <div class="form-group"> <button type="submit">Log in</button> </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click" />
+        </div>
         
         </form>
 </div>
