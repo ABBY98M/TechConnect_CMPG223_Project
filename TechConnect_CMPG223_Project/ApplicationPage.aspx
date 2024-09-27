@@ -199,7 +199,7 @@
 
         <div class="form-group">
             <label for="idDocument">Upload ID Document</label>
-            <asp:FileUpload ID="fuIDDocument" runat="server" required />
+            <asp:FileUpload ID="fuIDDocument" runat="server" />
         </div>
 
         <div class="form-group">
