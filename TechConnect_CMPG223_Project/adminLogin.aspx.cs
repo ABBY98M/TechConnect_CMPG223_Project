@@ -2,8 +2,9 @@
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace TechConnect_CMPG223_Project
+public partial class AdminLogin : Page
 {
     public partial class AdminLogin : System.Web.UI.Page
     {
@@ -80,6 +81,41 @@ namespace TechConnect_CMPG223_Project
         protected void txtPassword_TextChanged(object sender, EventArgs e)
         {
             // You can implement logic here if needed
+        }
+        else
+        {
+            // Display an error message
+            string script = "alert('Invalid username or password. Please try again.');";
+            ClientScript.RegisterStartupScript(this.GetType(), "LoginError", script, true);
+        
+        }
+    }
+
+    private bool ValidateAdminCredentials(string username, string password)
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+
+        // SQL query to fetch admin credentials
+        string query = "SELECT COUNT(1) FROM Admins WHERE Username = @Username AND Password = @Password";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Username", username);
+                command.Parameters.AddWithValue("@Password", password);
+                try
+                {
+                    connection.Open();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count == 1; // Returns true if the admin exists
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+            }
         }
     }
 }

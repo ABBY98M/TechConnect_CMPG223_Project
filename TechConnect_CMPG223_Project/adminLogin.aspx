@@ -110,5 +110,73 @@
     </div>
 </form>
 
+<script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate login logic (replace with actual authentication logic)
+        if (username === "admin" && password === "password123") { // Example credentials
+            alert('Login successful! Redirecting to admin dashboard...');
+            window.location.href = 'adminDashboard.html'; // Change to your actual admin dashboard page
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate login logic (replace with actual authentication logic)
+        if (username === "admin" && password === "password123") { // Example credentials
+            alert('Login successful! Redirecting to admin dashboard...');
+            window.location.href = 'adminDashboard.html'; // Change to your actual admin dashboard page
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate login logic (replace with actual authentication logic)
+        if (username === "admin" && password === "password123") { // Example credentials
+            alert('Login successful! Redirecting to admin dashboard...');
+            window.location.href = 'adminDashboard.html'; // Change to your actual admin dashboard page
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    });
+</script>
+
+<script>
+    document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate login logic (replace with actual authentication logic)
+        if (username === "admin" && password === "password123") { // Example credentials
+            alert('Login successful! Redirecting to admin dashboard...');
+            window.location.href = 'adminDashboard.html'; // Change to your actual admin dashboard page
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    });
+</script>
+
 </body>
 </html>

@@ -19,7 +19,7 @@ namespace TechConnect_CMPG223_Project
         // Event handler for the Login button click
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            
+
             // Get the entered data from the form fields
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text.Trim();
